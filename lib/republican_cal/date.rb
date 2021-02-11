@@ -61,7 +61,7 @@ module RepublicanCal
 
     # So we have arranged in the column of each month,
     # the names of the real treasures of the rural economy.
-    # -  Fabre d'Églantine
+    # - Fabregi d'Églantine
     def day_symbol
       day_num = 30*(month - 1) + (day - 1)
 
