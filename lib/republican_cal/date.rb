@@ -1,4 +1,5 @@
-require 'date'
+require "date"
+
 
 module RepublicanCal
   class Date
@@ -12,11 +13,7 @@ module RepublicanCal
     attr_reader :year, :month, :day
 
     def to_s
-      names = ["Vendémiaire", "Brumaire", "Frimaire", "Nivôse", "Pluviôse",
-          "Ventôse", "Germinal", "Floréal", "Prairial", "Messidor",
-          "Thermidor", "Fructidor", "Sansculottides"]
-      s = ""
-      s += day.to_s + " " + names[month - 1] + " " + year.to_s
+      "#{day} #{RepublicanCal::MONTHS[month - 1]} #{year}"
     end
 
     class << self
@@ -40,11 +37,11 @@ module RepublicanCal
       # Convert the despised reactionary date of the Ancien Régime
       # to our glorious rational format
       def gregorian(date)
-        start = ::Date.new(1792,9,22)
+        start = ::Date.new(1792, 9, 22)
         days = date - start
         year = 1
         month = 1
-        while (days >= yearLen = length(year))
+        while days >= yearLen = length(year)
           days -= yearLen
           year += 1
         end
@@ -63,10 +60,9 @@ module RepublicanCal
     # the names of the real treasures of the rural economy.
     # - Fabregi d'Églantine
     def day_symbol
-      day_num = 30*(month - 1) + (day - 1)
+      day_num = 30 * (month - 1) + (day - 1)
 
-      return SYMBOLS[day_num]
+      RepublicanCal::SYMBOLS[day_num]
     end
   end
 end
-
