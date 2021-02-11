@@ -1,4 +1,4 @@
-h1. FrenchRevCal-ruby
+# FrenchRevCal-ruby
 
 By Jonathan Badger
 
@@ -15,7 +15,7 @@ September 1792, with the official founding of the French
 Republic. Each day of the year was associated with a plant, animal, or
 tool, replacing the saints of Catholic tradition.
 
-h2. Usage
+## Usage
 
 The script "revcal" without any arguments returns the current date in
 the revolutionary calendar, along with the associated concept for the
@@ -23,7 +23,7 @@ day. Providing a date (in a standard format that the Ruby Date class
 can parse), returns the value for that date instead (which is useful
 for looking up one's birthday, for instance.)
 
-h2. Algorithm
+## Algorithm
 
 I use the arithmetic of the Date class to calculate the number of days
 since September 22, 1792 (Day 1 of Year 1). Then it is a simple matter
@@ -43,11 +43,11 @@ date of Napoleon Bonaparte's coup against the French Directory,
 effectively killing the revolution as an ideological movement),
 
 
-h2. Dependencies
+## Dependencies
 
 None!
 
-h2. License
+## License
 
 (The MIT License)
 

@@ -1,48 +1,6 @@
-# coding: utf-8
-class RevDate
-  attr_reader :year, :month, :day
-  # create new RevDate with given year, month, day (numeric, using revolutionary year, month, day)
-  def initialize(year, month, day)
-    @year = year
-    @month = month
-    @day = day
-  end
-  # create human readable string of date
-  def to_s
-    names = ["Vendémiaire", "Brumaire", "Frimaire", "Nivôse", "Pluviôse",
-        "Ventôse", "Germinal", "Floréal", "Prairial", "Messidor",
-        "Thermidor", "Fructidor", "Sansculottides"]
-    s = ""
-    s += @day.to_s + " " + names[@month - 1] + " " + @year.to_s
-  end
-  # return number of days in given revolutionary year
-  def RevDate.length(year)
-    if (year == 3 || year == 7 || year == 11 || year == 15 || year == 20)
-      return 366
-    elsif (year > 20 && (year % 4 == 0 && (year % 100 > 0) || year % 400 == 0))
-      return 366
-    else
-      return 365
-    end
-  end
-  # convert the despised reactionary date of the ancien regime to our glorious rational format
-  def RevDate.fromGregorian(d)
-    start = Date.new(1792,9,22)
-    days = d - start
-    year = 1
-    month = 1
-    while (days >= yearLen = RevDate.length(year))
-      days -= yearLen
-      year += 1
-    end
-    month = (1 + (days / 30)).to_i
-    day = (1 + (days % 30)).to_i
-    return RevDate.new(year, month, day)
-  end
-  #return the date's symbol (associated plant, animal, or tool)
-  def daySymbol
-    dayNum = 30*(@month - 1) + (@day - 1)
-    symbols = ["Raisin (Grape)",
+module RepublicanCal
+  SYMBOLS = [
+    "Raisin (Grape)",
     "Safran (Saffron)",
     "Châtaigne (Chestnut)",
     "Colchique (Crocus)",
@@ -407,8 +365,6 @@ class RevDate
     "La Fête du Travail (Celebration of Labour)",
     "La Fête de l'Opinion (Celebration of Principles)",
     "La Fête des Récompenses (Celebration of Honours)",
-    "La Fête de la Révolution (Celebration of the Revolution)"]
-    return symbols[dayNum]
-  end
+    "La Fête de la Révolution (Celebration of the Revolution)"
+  ]
 end
-
