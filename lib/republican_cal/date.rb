@@ -37,7 +37,7 @@ module RepublicanCal
         end
       end
 
-      # Convert the despised reactionary date of the ancient regime
+      # Convert the despised reactionary date of the Ancien Régime
       # to our glorious rational format
       def gregorian(date)
         start = ::Date.new(1792,9,22)
