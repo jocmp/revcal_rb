@@ -16,7 +16,7 @@ module RepublicanCal
           "Ventôse", "Germinal", "Floréal", "Prairial", "Messidor",
           "Thermidor", "Fructidor", "Sansculottides"]
       s = ""
-      s += @day.to_s + " " + names[@month - 1] + " " + @year.to_s
+      s += day.to_s + " " + names[month - 1] + " " + year.to_s
     end
 
     class << self
@@ -53,13 +53,17 @@ module RepublicanCal
 
         new(year, month, day)
       end
+
+      def today
+        gregorian(::Date.today)
+      end
     end
 
     # So we have arranged in the column of each month,
     # the names of the real treasures of the rural economy.
     # -  Fabre d'Églantine
     def day_symbol
-      day_num = 30*(@month - 1) + (@day - 1)
+      day_num = 30*(month - 1) + (day - 1)
 
       return SYMBOLS[day_num]
     end
