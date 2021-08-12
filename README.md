@@ -1,8 +1,8 @@
-# republican_cal
+# revcal_rb
 
 Original intro by author Jonathan Badger:
 
-FrenchRevCal-Ruby (republican_cal) is a script that converts standard Gregorian dates
+FrenchRevCal-Ruby (revcal) is a script that converts standard Gregorian dates
 into those used by the [French Republican Calendar](http://en.wikipedia.org/wiki/French_Republican_Calendar).
 This was the calendar used by the Republican government in France between 1793 and
 1805. Its structure reflects the secular, rational ideals of the time,

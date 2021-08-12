@@ -3,7 +3,7 @@ require 'optparse'
 require 'ostruct'
 require 'date'
 require 'bundler/setup'
-require 'republican_cal'
+require 'revcal'
 
 opt = OpenStruct.new
 opt.europe = false
@@ -32,6 +32,6 @@ if (ARGV.size > 0)
   date = Date.parse(date)
 end
 
-date = RepublicanCal::Date.gregorian(date)
+date = Revcal::Date.gregorian(date)
 
 puts "Today is #{date.to_s} celebrating the #{date.day_symbol}."

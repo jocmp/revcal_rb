@@ -1,9 +1,9 @@
-require_relative "lib/republican_cal/version"
+require_relative "lib/revcal/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "republican_cal"
+  spec.name = "revcal"
   spec.authors = ["Jonathan Badger"]
-  spec.version = RepublicanCal::VERSION
+  spec.version = Revcal::VERSION
   spec.license = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
   spec.summary = "frenchrevcal-ruby implements the French Revolutionary (or Republican) calendar."

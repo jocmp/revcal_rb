@@ -1,4 +1,4 @@
-module RepublicanCal
+module Revcal
   SYMBOLS = [
     "Raisin (Grape)",
     "Safran (Saffron)",

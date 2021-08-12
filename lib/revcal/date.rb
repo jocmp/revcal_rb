@@ -1,6 +1,6 @@
 require "date"
 
-module RepublicanCal
+module Revcal
   class Date
     # Instantiate using revolutionary year, month, day
     def initialize(year, month, day)
@@ -12,7 +12,7 @@ module RepublicanCal
     attr_reader :year, :month, :day
 
     def to_s
-      "#{day} #{RepublicanCal::MONTHS[month - 1]} #{year}"
+      "#{day} #{Revcal::MONTHS[month - 1]} #{year}"
     end
 
     class << self
@@ -61,7 +61,7 @@ module RepublicanCal
     def day_symbol
       day_num = 30 * (month - 1) + (day - 1)
 
-      RepublicanCal::SYMBOLS[day_num]
+      Revcal::SYMBOLS[day_num]
     end
   end
 end

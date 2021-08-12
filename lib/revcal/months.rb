@@ -1,4 +1,4 @@
-module RepublicanCal
+module Revcal
   MONTHS = [
     "Vendémiaire",
     "Brumaire",
