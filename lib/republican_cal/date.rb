@@ -1,6 +1,5 @@
 require "date"
 
-
 module RepublicanCal
   class Date
     # Instantiate using revolutionary year, month, day
