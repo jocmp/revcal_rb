@@ -1,4 +1,4 @@
-# revcal_rb
+# Revcal
 
 Original intro by author Jonathan Badger:
 
