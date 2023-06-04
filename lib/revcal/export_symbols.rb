@@ -1,20 +1,22 @@
 require "revcal/symbols"
-require "debug"
+require "revcal/export_symbol"
+require "active_support/core_ext/string"
+require "json"
 
 module Revcal
   class ExportSymbols
+    # {
+    #
+    #
     class << self
       def export
-        Revcal::SYMBOLS.each do |symbol|
-          french_name, english_name = symbol.split(/[()]+/)
-          french_name = french_name.strip
-
-          recombine = "#{french_name} (#{english_name})"
-
-          raise "mismatch for #{symbol} != #{recombine}" if symbol != recombine
+        export = Revcal::SYMBOLS.map do |symbol|
+          Revcal::ExportSymbol.new(symbol).as_json
         end
 
-        puts "ok :)"
+        File.open(File.expand_path( './export.json'), 'w') do |f|
+          f.write(JSON.pretty_generate(export))
+        end
       end
     end
   end
