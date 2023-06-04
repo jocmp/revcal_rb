@@ -24,7 +24,7 @@ module Revcal
     "Pêche (the peach)",
     "Navet (the turnip)",
     "Amaryllis (amaryllis)",
-    "Bœuf (the cow)",
+    "Bœuf (cattle)",
     "Aubergine (eggplant)",
     "Piment (the chili pepper)",
     "Tomate (the tomato)",

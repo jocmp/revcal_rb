@@ -10,7 +10,7 @@ module Revcal
       english_name, description = english_description.split(" - ")
 
       id = english_name
-        .gsub(/^the /, "")
+        .gsub(/^(t|T)he /, "")
         .gsub("’", "")
         .gsub("-", "_")
         .gsub(/( )+/, "_")
