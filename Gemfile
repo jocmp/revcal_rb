@@ -4,4 +4,5 @@ source "https://rubygems.org"
 gemspec
 
 gem "rake"
-gem "minitest"
+gem "minitest", "~> 5.18"
+gem "debug", ">= 1.0.0"
